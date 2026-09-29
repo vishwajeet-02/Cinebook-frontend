@@ -15,7 +15,7 @@ import MyBookings from "./pages/MyBookings";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Ticket from "./pages/Ticket";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/Protectedroute";
 import AdminDashboard from "./Admin/AdminDashboard";
 import AdminMovies from "./Admin/AdminMovies";
 import AdminLayout from "./Admin/AdminLayout";
