@@ -1,0 +1,623 @@
+/* =========================================================
+   CINEBOOK ADMIN SETTINGS - PREMIUM UI
+   ========================================================= */
+
+.admin-page {
+  min-height: 100vh;
+  padding: 34px;
+  color: #f5f7fb;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(35, 99, 235, 0.18), transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(245, 183, 72, 0.10), transparent 28%),
+    linear-gradient(135deg, #050914 0%, #08101f 50%, #040710 100%);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.admin-page-header span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #d9a441;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.admin-page-header h1 {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #dfe8f7 45%,
+    #d9a441
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-page-header p {
+  margin: 8px 0 0;
+  color: #8793a8;
+  font-size: 14px;
+}
+
+/* =========================================================
+   SETTINGS GRID
+   ========================================================= */
+
+.admin-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* =========================================================
+   SETTINGS CARD
+   ========================================================= */
+
+.admin-settings-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 26px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Decorative glow */
+
+.admin-settings-card::before {
+  content: "";
+  position: absolute;
+  top: -90px;
+  right: -90px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(31, 102, 255, 0.12);
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+.admin-settings-card::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 0;
+
+  width: 70px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #d9a441,
+    transparent
+  );
+
+  opacity: 0.9;
+}
+
+.admin-settings-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(217, 164, 65, 0.25);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(31, 102, 255, 0.06);
+}
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.admin-settings-card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.admin-settings-card > p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 24px;
+
+  color: #78859a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FORM FIELDS
+   ========================================================= */
+
+.admin-field {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 19px;
+}
+
+.admin-field:last-child {
+  margin-bottom: 0;
+}
+
+.admin-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #aeb8c8;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Input + Select */
+
+.admin-field input,
+.admin-field select {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+
+  outline: none;
+
+  color: #f5f7fb;
+  background: rgba(3, 8, 18, 0.72);
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.admin-field input::placeholder {
+  color: #59667a;
+}
+
+.admin-field input:hover,
+.admin-field select:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.admin-field input:focus,
+.admin-field select:focus {
+  border-color: rgba(217, 164, 65, 0.75);
+
+  background: rgba(5, 11, 24, 0.95);
+
+  box-shadow:
+    0 0 0 3px rgba(217, 164, 65, 0.08),
+    0 0 22px rgba(217, 164, 65, 0.07);
+}
+
+/* Select options */
+
+.admin-field select option {
+  color: #ffffff;
+  background: #0a1222;
+}
+
+/* Number input */
+
+.admin-field input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.admin-field input[type="number"]::-webkit-inner-spin-button,
+.admin-field input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   TOGGLE ROW
+   ========================================================= */
+
+.admin-toggle-row {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  min-height: 72px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.admin-toggle-row:last-child {
+  border-bottom: none;
+}
+
+.admin-toggle-row strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #e9edf5;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.admin-toggle-row small {
+  display: block;
+
+  color: #707d91;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PREMIUM SWITCH
+   ========================================================= */
+
+.admin-switch {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 50px;
+  height: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+
+  background: #151d2c;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.35);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.admin-switch::after {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  left: 4px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #8994a6;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.5);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+/* ON state */
+
+.admin-switch.on {
+  border-color: rgba(217, 164, 65, 0.65);
+
+  background:
+    linear-gradient(
+      135deg,
+      #8d681f,
+      #d9a441
+    );
+
+  box-shadow:
+    0 0 18px rgba(217, 164, 65, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 0.18);
+}
+
+.admin-switch.on::after {
+  transform: translateX(22px);
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   SAVE BAR
+   ========================================================= */
+
+.admin-settings-save-bar {
+  position: sticky;
+  bottom: 18px;
+  z-index: 20;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 24px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 15, 29, 0.92),
+      rgba(5, 10, 20, 0.88)
+    );
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.admin-btn {
+  min-height: 44px;
+
+  padding: 0 19px;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.admin-btn:hover {
+  transform: translateY(-2px);
+}
+
+.admin-btn:active {
+  transform: translateY(0);
+}
+
+/* Outline button */
+
+.admin-btn.outline {
+  color: #aeb8c8;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.admin-btn.outline:hover {
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Gold button */
+
+.admin-btn.gold {
+  color: #101010;
+
+  border: 1px solid #d9a441;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0c66b,
+      #d9a441
+    );
+
+  box-shadow:
+    0 8px 25px rgba(217, 164, 65, 0.18);
+}
+
+.admin-btn.gold:hover {
+  box-shadow:
+    0 12px 32px rgba(217, 164, 65, 0.30),
+    0 0 18px rgba(217, 164, 65, 0.12);
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-page {
+    padding: 25px 20px;
+  }
+
+  .admin-settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-header h1 {
+    font-size: 32px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 20px 14px 100px;
+  }
+
+  .admin-page-header {
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+
+  .admin-page-header h1 {
+    font-size: 29px;
+  }
+
+  .admin-page-header p {
+    max-width: 330px;
+    font-size: 13px;
+  }
+
+  .admin-settings-grid {
+    gap: 16px;
+  }
+
+  .admin-settings-card {
+    padding: 20px 17px;
+    border-radius: 17px;
+  }
+
+  .admin-settings-card h3 {
+    font-size: 17px;
+  }
+
+  .admin-toggle-row {
+    gap: 12px;
+  }
+
+  .admin-toggle-row strong {
+    font-size: 13px;
+  }
+
+  .admin-toggle-row small {
+    max-width: 220px;
+    font-size: 11px;
+  }
+
+  .admin-switch {
+    width: 46px;
+    height: 26px;
+  }
+
+  .admin-switch::after {
+    width: 17px;
+    height: 17px;
+  }
+
+  .admin-switch.on::after {
+    transform: translateX(19px);
+  }
+
+  .admin-settings-save-bar {
+    position: fixed;
+
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    margin: 0;
+
+    padding: 11px;
+
+    border-radius: 14px;
+
+    justify-content: stretch;
+  }
+
+  .admin-settings-save-bar .admin-btn {
+    flex: 1;
+    min-height: 43px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .admin-page-header h1 {
+    font-size: 26px;
+  }
+
+  .admin-settings-card {
+    padding: 18px 14px;
+  }
+
+  .admin-toggle-row small {
+    max-width: 180px;
+  }
+
+  .admin-settings-save-bar {
+    gap: 8px;
+  }
+
+  .admin-settings-save-bar .admin-btn {
+    font-size: 11px;
+  }
+}

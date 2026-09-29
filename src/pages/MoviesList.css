@@ -1,0 +1,315 @@
+/* ==========================================
+   MoviesList.css — Premium "Poster Wall" theme
+   Save this exact file as: src/pages/MoviesList.css
+   (same folder as MoviesList.jsx)
+   ========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap");
+
+.movies-list-page {
+  --ink: #0b0b0d;
+  --surface: #17171b;
+  --surface-raised: #1f1f24;
+  --gold: #c9a227;
+  --gold-soft: #e3c667;
+  --paper: #f5f1e8;
+  --muted: #8a8a93;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+  background: var(--ink);
+  font-family: "Manrope", sans-serif;
+  min-height: calc(100vh - 75px);
+}
+
+/* ---------- Header ---------- */
+
+.movies-list-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+  padding-bottom: 28px;
+}
+
+.movies-list-header .page-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.movies-list-header h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 52px);
+  color: var(--paper);
+  margin: 8px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.movies-list-header h1 span {
+  font-style: italic;
+  color: var(--gold-soft);
+}
+
+.movies-list-header p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 46ch;
+}
+
+/* ---------- Grid ---------- */
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 28px 22px;
+}
+
+/* ---------- Card ---------- */
+
+.poster-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  isolation: isolate;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.poster-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.poster-card-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: var(--surface-raised);
+  overflow: hidden;
+  position: relative;
+}
+
+.poster-card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.3s ease;
+}
+
+.poster-card-poster .poster-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: var(--surface-raised);
+  color: var(--muted);
+}
+
+/* Bottom gradient so the title stays legible over any poster art */
+.poster-card-poster::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(
+    to top,
+    rgba(11, 11, 13, 0.95) 0%,
+    rgba(11, 11, 13, 0.55) 45%,
+    rgba(11, 11, 13, 0) 100%
+  );
+  pointer-events: none;
+}
+
+/* Rotated gold "ticket stamp" holding the rating */
+.poster-card-meta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(11, 11, 13, 0.85);
+  border: 1px solid rgba(201, 162, 39, 0.55);
+  color: var(--gold-soft);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 9px 4px 7px;
+  border-radius: 4px;
+  transform: rotate(-4deg);
+  transform-origin: top left;
+}
+
+.poster-card-meta span:last-child {
+  display: none;
+}
+
+.poster-card-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 14px 14px 16px;
+}
+
+.poster-card-info h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.25;
+  color: var(--paper);
+  margin: 0 0 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.poster-card-info p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Hover */
+.poster-card:hover,
+.poster-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.65);
+}
+
+.poster-card:hover .poster-card-poster img,
+.poster-card:focus-visible .poster-card-poster img {
+  transform: scale(1.06);
+  filter: saturate(1.05);
+}
+
+.poster-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  pointer-events: none;
+  transition: border-color 0.35s ease;
+}
+
+.poster-card:hover::before,
+.poster-card:focus-visible::before {
+  border-color: rgba(201, 162, 39, 0.5);
+}
+
+/* ---------- Empty state ---------- */
+
+.movies-list-page .empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px dashed rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
+}
+
+.movies-list-page .empty-state div {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+
+.movies-list-page .empty-state h2 {
+  font-family: "Fraunces", serif;
+  color: var(--paper);
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+/* ---------- Loading state ---------- */
+
+.movies-list-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: #0b0b0d;
+  color: #8a8a93;
+  font-family: "Manrope", sans-serif;
+}
+
+.movies-list-loading .loader {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(201, 162, 39, 0.25);
+  border-top-color: #c9a227;
+  border-radius: 50%;
+  animation: mlSpin 0.8s linear infinite;
+}
+
+@keyframes mlSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .movies-list-page {
+    padding: 32px 18px 56px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 18px 14px;
+  }
+
+  .poster-card-info h3 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .poster-card-info {
+    padding: 10px 10px 12px;
+  }
+
+  .poster-card-meta {
+    font-size: 11px;
+    padding: 3px 7px 3px 6px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-card,
+  .poster-card-poster img,
+  .poster-card::before,
+  .movies-list-loading .loader {
+    transition: none;
+    animation: none;
+  }
+
+  .poster-card:hover {
+    transform: none;
+  }
+}

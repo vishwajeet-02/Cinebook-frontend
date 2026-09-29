@@ -1,0 +1,125 @@
+.ticket-page {
+  min-height: 100vh;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.ticket-card {
+  width: 750px;
+  max-width: 100%;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ticket-header {
+  background: #e50914;
+  color: white;
+  padding: 22px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-header h1 {
+  margin: 0;
+}
+
+.ticket-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 35px;
+}
+
+.ticket-info {
+  flex: 1;
+}
+
+.ticket-info h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.ticket-info p {
+  margin: 14px 0;
+  font-size: 16px;
+}
+
+.confirmed {
+  color: green;
+  font-weight: bold;
+}
+
+.qr-section {
+  text-align: center;
+}
+
+.qr-section img {
+  width: 190px;
+  height: 190px;
+}
+
+.qr-section p {
+  font-size: 13px;
+  color: #666;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 15px;
+  padding: 0 35px 30px;
+}
+
+.ticket-actions button {
+  flex: 1;
+  border: none;
+  padding: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #e50914;
+  color: white;
+  font-size: 16px;
+}
+
+.ticket-actions button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+
+  .ticket-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ticket-header {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+  }
+}
+
+@media print {
+
+  .ticket-page {
+    background: white;
+    padding: 0;
+  }
+
+  .ticket-card {
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .ticket-actions {
+    display: none;
+  }
+}

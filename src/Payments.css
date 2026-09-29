@@ -1,0 +1,326 @@
+/* ==========================================
+   Payment.css — Cinematic checkout card
+   Save as: src/Payment.css (same folder as Payment.jsx)
+   ========================================== */
+
+.pay-page {
+  min-height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #080808;
+}
+
+.pay-card {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1410;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Header strip ---------- */
+
+.pay-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(139, 60, 15, 0.55) 0%,
+      rgba(30, 15, 10, 0.9) 60%
+    );
+}
+
+.pay-header-poster {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.pay-header-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pay-poster-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2a2a2a;
+  font-size: 24px;
+}
+
+.pay-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pay-header-info h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pay-header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12.5px;
+  color: #d8cfc4;
+}
+
+.pay-rating-chip {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pay-header-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.pay-header-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.pay-header-toggle span {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.pay-header-toggle span.rotated {
+  transform: rotate(180deg);
+}
+
+/* ---------- Body ---------- */
+
+.pay-body {
+  padding: 26px 24px 28px;
+  color: #f2ede6;
+}
+
+.pay-body h1 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+/* Ticket line item */
+
+.pay-line-item {
+  border: 1px solid #e5730f;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  background: rgba(229, 115, 15, 0.08);
+  transition: padding 0.2s ease;
+}
+
+.pay-line-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pay-line-item-top strong {
+  display: block;
+  font-size: 15px;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+.pay-line-item-top small {
+  color: #b8ab9c;
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.pay-line-item-price {
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pay-seat-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.pay-seat-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  padding: 4px 9px;
+  font-size: 11.5px;
+  color: #ddd;
+}
+
+/* Rows */
+
+.pay-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 2px;
+  font-size: 14px;
+}
+
+.pay-row div {
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-row small {
+  color: #948a7d;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.pay-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 10px 0;
+}
+
+.pay-total-row {
+  font-size: 19px;
+  padding: 6px 2px 22px;
+}
+
+/* ---------- Payment method buttons ---------- */
+
+.pay-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.pay-method-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 15px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #2a231d;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pay-method-btn:hover:not(:disabled) {
+  border-color: #e5730f;
+  background: #362c22;
+  transform: translateY(-2px);
+}
+
+.pay-method-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pay-method-btn.loading {
+  opacity: 1;
+  border-color: #e5730f;
+  background: #3a2c1c;
+}
+
+.pay-method-icon {
+  font-size: 17px;
+}
+
+/* First method (Card) spans full width, like the reference layout's
+   primary "Add Credit or Debit Card" button */
+.pay-methods .pay-method-btn:first-child {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Loading ---------- */
+
+.pay-page-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #999;
+  background: #080808;
+}
+
+.pay-page-loading .loader {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(229, 115, 15, 0.25);
+  border-top-color: #e5730f;
+  border-radius: 50%;
+  animation: paySpin 0.8s linear infinite;
+}
+
+@keyframes paySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .pay-page {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .pay-card {
+    max-width: 100%;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .pay-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .pay-methods .pay-method-btn:first-child {
+    grid-column: auto;
+  }
+}
