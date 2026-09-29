@@ -1,7 +1,8 @@
+
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:6060/api",
+  baseURL: "https://cinebook-backend-yzqs.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -18,3 +19,4 @@ api.interceptors.request.use((config) => {
 });
 
 export default api;
+
