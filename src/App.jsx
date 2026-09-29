@@ -29,7 +29,7 @@ import AdminTickets from "./Admin/Admintickets";
 import AdminUsers from "./Admin/Adminusers";
 import AdminAnalytics from "./Admin/Adminanalytics";
 import AdminSettings from "./Admin/Adminsettings";
-// NEW: fraud/anomaly detection admin page
+
 import AdminFraud from "./Admin/AdminFraud";
 import ChatWidget from "./components/ChatWidget"
 
