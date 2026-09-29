@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 
-import MoviesList from "./pages/Movieslist";
+import MoviesList from "./pages/MoviesList";
 import MovieDetails from "./pages/MovieDetails";
 import TheatreSelection from "./pages/TheatreSelection";
 import ShowSelection from "./pages/ShowSelection";
@@ -31,7 +31,7 @@ import AdminAnalytics from "./Admin/Adminanalytics";
 import AdminSettings from "./Admin/Adminsettings";
 // NEW: fraud/anomaly detection admin page
 import AdminFraud from "./Admin/AdminFraud";
-import ChatWidget from "./components/Chatwidget";
+import ChatWidget from "./components/ChatWidget"
 
 const App = () => {
   const location = useLocation();
