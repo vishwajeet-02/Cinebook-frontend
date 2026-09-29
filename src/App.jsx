@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 
-import MoviesList from "./pages/MoviesList";
+import MoviesList from "./pages/Movieslist";
 import MovieDetails from "./pages/MovieDetails";
 import TheatreSelection from "./pages/TheatreSelection";
 import ShowSelection from "./pages/ShowSelection";
