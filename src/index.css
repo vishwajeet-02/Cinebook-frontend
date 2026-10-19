@@ -170,12 +170,29 @@ button {
 
 @media (max-width: 600px) {
   .navbar {
-    padding: 0 20px;
+    padding: 0 14px;
   }
 
   .profile-btn,
   .logout-btn {
-    display: none;
+    padding: 8px;
+    font-size: 0;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .profile-btn::before {
+    content: "👤";
+    font-size: 16px;
+  }
+
+  .logout-btn::before {
+    content: "⎋";
+    font-size: 17px;
   }
 }
 
