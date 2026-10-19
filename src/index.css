@@ -19,6 +19,8 @@ button {
   font-family: inherit;
 }
 
+/* NAVBAR */
+
 /* ========================================
    NAVBAR — Neon Glassmorphism redesign
    ========================================
@@ -171,13 +173,10 @@ button {
     padding: 0 14px;
   }
 
-  /* CHANGED: these used to be display:none on mobile, which meant
-     there was no way to log out on a phone at all. They're now
-     shrunk to compact icon-only buttons instead of being hidden. */
   .profile-btn,
   .logout-btn {
     padding: 8px;
-    font-size: 0; /* collapse the text label */
+    font-size: 0;
     width: 38px;
     height: 38px;
     display: flex;
